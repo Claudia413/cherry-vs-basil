@@ -1,0 +1,15 @@
+body {
+  font-family: "fantasy", helvetica, sans-serif;
+  font-size: 1rem;
+  color: lavender;
+  background-color: black;
+  text-align: center;
+  text-shadow: 2px 2px 3px grey;
+  font-style: oblique;
+}
+
+h1 {
+  font-family: "Raleway", serif;
+  font-size: 4rem;
+  color: turquoise;
+}
