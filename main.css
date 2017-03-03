@@ -15,7 +15,7 @@
     height: 100px;
     font-family: helvetica, sans-serif;
     font-style: normal;
-    background: linear-gradient(aquamarine, mediumaquamarine);
+    background: linear-gradient(#FFF, #b9caf4);
 }
 
 #logo {
@@ -93,7 +93,7 @@
 }
 
 #maincontent {
-    width: 650px;
+   /* width: 650px; */
     background: #fff;
 }
 
@@ -133,14 +133,58 @@ p {
     padding: 5px;
 }
 
-img {
-    border-radius: 20%;
+ img {
+   /* border-radius: 20%; */
+     }
+
+#leaf1 {
+    background: url("imgs/leaf1.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
 }
+
+#leaf2 {
+    background: url("imgs/leaf2.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
+#leaf3 {
+    background: url("imgs/leaf3.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
+#leaf4 {
+    background: url("imgs/leaf4.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
+#leaf5 {
+    background: url("imgs/leaf5.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
+#leaf6 {
+    background: url("imgs/leaf6.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
+
 #footer {
     clear: both;
     height: 200px;
     width: 100%;
-    background: #def2ef;
+    background: #b9caf4;
     margin-bottom: 20px;
 }
 
