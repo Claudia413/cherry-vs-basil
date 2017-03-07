@@ -50,8 +50,26 @@
     padding-bottom: 6px;
     font-family: "Raleway", sans-serif;
     /*    font-size: 26px; */
-    font-size: 2.1vw;
+/*    font-size: 2.1vw; */
     color: #ffffff;
+}
+
+@media screen and (min-width: 570px) {
+    .navigation li {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 569px) {
+    .navigation li {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .navigation li {
+        font-size: 2.1vw;
+    }
 }
 
 .navigation li a {
@@ -138,9 +156,22 @@ img {
     width: 150px;
     height: 150px;
 }
+#leaf1:hover {
+    background: url("imgs/leaf1H.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
 
 #leaf2 {
     background: url("imgs/leaf2.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
+#leaf2:hover {
+    background: white;
     background-size: 150px 150px;
     width: 150px;
     height: 150px;
@@ -153,11 +184,25 @@ img {
     height: 150px;
 }
 
+#leaf3:hover {
+    background: url("imgs/leaf3H.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
 #leaf4 {
     background: url("imgs/leaf4.gif") no-repeat;
     background-size: 150px 150px;
     width: 150px;
     height: 150px;
+}
+
+#leaf4:hover {
+    background: url("imgs/leaf4H.gif") no-repeat;
+    background-size: 160px 160px;
+    width: 160px;
+    height: 160px;
 }
 
 #leaf5 {
@@ -167,8 +212,22 @@ img {
     height: 150px;
 }
 
+#leaf5:hover {
+    background: url("imgs/leaf5H.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
 #leaf6 {
     background: url("imgs/leaf6.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
+#leaf6:hover {
+    background: url("imgs/leaf6H.gif") no-repeat;
     background-size: 150px 150px;
     width: 150px;
     height: 150px;
@@ -182,11 +241,12 @@ img {
     background: url("imgs/autumn-leafs-1.jpg") repeat-x;
     background-attachment: fixed;
     margin-left: 0;
+    padding-left: 0;
 }
 
 .about_text {
     color: white;
-    margin-top: 30px;
+    margin: 30px 0 0 0%;
     /*margin: 50px 0 0 10px;*/
 }
 
@@ -198,6 +258,7 @@ img {
     float: left;
     position: relative;
     margin-top: 30px;
+    padding-left: 15px;
     /*margin: 50px 10px 0px;*/
 }
 
@@ -231,7 +292,7 @@ img {
 .contact_map {
     max-width: 500px;
     text-align: center;
-    position: relative;
+/*    position: relative; */
     margin-top: 30px;
 }
 
@@ -243,6 +304,9 @@ img {
 .social_buttons i {
     color: white;
     font-size: 52px;
-    margin-right: 20%;
-    margin-top: 8px;
+    margin: 8px 0 10px 0;
+}
+
+.no_margin {
+    margin: 0;
 }
