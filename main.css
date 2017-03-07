@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-/*    border: 1px solid; */
+    /*    border: 1px solid; */
 }
 
 #leaf-header {
@@ -50,7 +50,7 @@
     padding-bottom: 6px;
     font-family: "Raleway", sans-serif;
     /*    font-size: 26px; */
-/*    font-size: 2.1vw; */
+    /*    font-size: 2.1vw; */
     color: #ffffff;
 }
 
@@ -156,6 +156,7 @@ img {
     width: 150px;
     height: 150px;
 }
+
 #leaf1:hover {
     background: url("imgs/leaf1H.gif") no-repeat;
     background-size: 150px 150px;
@@ -292,7 +293,7 @@ img {
 .contact_map {
     max-width: 500px;
     text-align: center;
-/*    position: relative; */
+    /*    position: relative; */
     margin-top: 30px;
 }
 
@@ -309,4 +310,75 @@ img {
 
 .no_margin {
     margin: 0;
+}
+
+/* World's wonkiest moving/dancing/chameleon menu below */
+.navigation li a:hover {
+    color: #f0f0f0;
+    text-decoration: none;
+    }
+
+.navigation li a:hover ~ ul .menublock {
+    display: block;
+    opacity: 1;
+    background-color: lightgrey;
+    height: auto;
+    width: auto;
+    z-index: 1000;
+    }
+
+.navigation li a:hover ~ ul {
+    z-index: 99999999;
+}
+
+.navigation li ul li:hover {
+    display: block;
+    opacity: 1;
+    background-color: pink;
+    height: auto;
+    width: auto;
+    padding: 0 5px;
+    z-index: 1000;
+}
+
+.move-down:hover {
+    display: block;
+    transform: translate(0, 5);
+    -webkit-transform: translate(0, 5px);
+}
+
+/*.menublock {*/
+    /*visibility: visible;*/
+    /*background-color: grey;*/
+    /*height: auto;*/
+    /*width: auto;*/
+/*}*/
+.menublock {
+    /*visibility: hidden;*/
+    opacity: 0;
+}
+.menublock:hover {
+    visibility: visible;
+
+}
+
+.object {
+    -webkit-transition: all 2s ease-in-out;
+    z-index: 100;
+}
+
+.object li{
+    color: #5771b8;
+    font-size: 15px;
+}
+
+.navigation li ul:hover {
+    position: absolute;
+    z-index: 999999;
+}
+
+.navigation li ul {
+    position: absolute;
+    z-index: -999999;
+    padding: 5px;
 }
