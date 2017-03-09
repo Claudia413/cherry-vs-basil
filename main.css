@@ -396,7 +396,13 @@ img {
 /* Css for game below */
 
 #balloon {
-    position: absolute;
-    height: 467px;
-    width: 410px;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 46.7px;
+    width: 41.0px;
+}
+#balloon img{
+    height: 46.7px;
+    width: 41.0px;
 }
