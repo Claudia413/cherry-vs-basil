@@ -39,6 +39,20 @@
     background-color: rgba(500, 500, 500, 0.85);
 }
 
+.navigation_on {
+    background-color: rgba(300, 300, 300, 0.95);
+}
+
+.navigation .navigation_on a {
+    color: #5771b8;
+
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: #6a6a6a;
+}
+
 .navigation li {
     float: left;
     list-style: none;
@@ -72,15 +86,11 @@
     }
 }
 
-.navigation li a {
-    text-decoration: none;
-    color: #6a6a6a;
-}
 
-.navigation li a:hover {
-    color: #f0f0f0;
-    text-decoration: none;
-}
+/*.navigation li a:hover {*/
+    /*color: #5771b8;*/
+    /*text-decoration: none;*/
+/*}*/
 
 #maincontent {
     background: #fff;
@@ -313,7 +323,7 @@ img {
 }
 
 /* World's wonkiest moving/dancing/chameleon menu below */
-.navigation li a:hover {
+/* .navigation li a:hover {
     color: #f0f0f0;
     text-decoration: none;
     }
@@ -353,9 +363,9 @@ img {
     /*height: auto;*/
     /*width: auto;*/
 /*}*/
-.menublock {
+/* .menublock {
     /*visibility: hidden;*/
-    opacity: 0;
+/*    opacity: 0;
 }
 .menublock:hover {
     visibility: visible;
@@ -381,4 +391,12 @@ img {
     position: absolute;
     z-index: -999999;
     padding: 5px;
+} */
+
+/* Css for game below */
+
+#balloon {
+    position: absolute;
+    height: 467px;
+    width: 410px;
 }
