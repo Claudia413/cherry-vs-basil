@@ -23,17 +23,17 @@ $(document).ready(function () {
      context.drawImage(cactusBottom, 75, 250, 160, 250);
      context.drawImage(balloon, 2, 200, 82, 93.4);
      context.drawImage(cactusTop, 150, -10, 120, 200); */
-
+    var balloon = document.getElementById("balloon");
     var myGamePiece;
 
     function startGame() {
-        myGamePiece = new component(30, 30, "red", 10, 120);
+        myGamePiece = new component(30, 30, "rgba(250,00,150,0.2", 10, 120);
         myGameArea.start();
     }
 
     var myGameArea = {
-        canvas : document.createElement("canvas"),
-        start : function() {
+        canvas: document.createElement("canvas"),
+        start: function() {
             this.canvas.width = 480;
             this.canvas.height = 270;
             this.context = this.canvas.getContext("2d");
@@ -53,7 +53,9 @@ $(document).ready(function () {
         this.update = function(){
             ctx = myGameArea.context;
             ctx.fillStyle = color;
-            ctx.fillRect(this.x, this.y, this.width, this.height);
+            // ctx.fillRect(this.x, this.y, this.width, this.height);
+            ctx.drawImage(balloon, this.x, this.y, this.width, this.height);
+
         }
     }
 
@@ -65,32 +67,32 @@ $(document).ready(function () {
 
     startGame();
 
-/*    $("body").keydown(deFunction);
-
- function moveImage(key) {
- var position = $('#balloonimg').position();
- switch (parseInt(key.which, 10)) {
- // Left arrow key pressed
- case 37:
- if (position.left > 0) {
- $("#balloonimg").animate({left: "-=10px"}, 50);
- }
- break;
- // Up Arrow Pressed
- case 38:
- if (position.top > 6) {
- $("#balloonimg").animate({top: "-=10px"}, 100);
- }
- break;
- // Right Arrow Pressed
- case 39:
- $("#balloonimg").animate({left: "+=10px"}, 100);
- break;
- // Down Arrow Pressed
- case 40:
- $("#balloonimg").animate({top: "+=10px"}, 100);
- break;
- }
- } */
+    // $("canvas").keydown(Function);
+    //
+    // function moveImage(key) {
+    //     var position = (component).position();
+    //     switch (parseInt(key.which, 10)) {
+    //         // Left arrow key pressed
+    //         case 37:
+    //             if (position.left > 0) {
+    //                 (component).animate({left: "-=10px"}, 50);
+    //             }
+    //             break;
+    //         // Up Arrow Pressed
+    //         case 38:
+    //             if (position.top > 6) {
+    //                 (component).animate({top: "-=10px"}, 100);
+    //             }
+    //             break;
+    //         // Right Arrow Pressed
+    //         case 39:
+    //             component.animate({left: "+=10px"}, 100);
+    //             break;
+    //         // Down Arrow Pressed
+    //         case 40:
+    //             component.animate({top: "+=10px"}, 100);
+    //             break;
+    //     }
+    // }
 })
 ;
