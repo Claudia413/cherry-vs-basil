@@ -86,10 +86,9 @@
     }
 }
 
-
 /*.navigation li a:hover {*/
-    /*color: #5771b8;*/
-    /*text-decoration: none;*/
+/*color: #5771b8;*/
+/*text-decoration: none;*/
 /*}*/
 
 #maincontent {
@@ -358,10 +357,10 @@ img {
 }
 
 /*.menublock {*/
-    /*visibility: visible;*/
-    /*background-color: grey;*/
-    /*height: auto;*/
-    /*width: auto;*/
+/*visibility: visible;*/
+/*background-color: grey;*/
+/*height: auto;*/
+/*width: auto;*/
 /*}*/
 /* .menublock {
     /*visibility: hidden;*/
@@ -395,14 +394,19 @@ img {
 
 /* Css for game below */
 
-#balloon {
+#balloonimg {
     position: relative;
     top: 0;
     left: 0;
     height: 46.7px;
     width: 41.0px;
 }
-#balloon img{
+
+#balloonimg img {
     height: 46.7px;
     width: 41.0px;
+}
+
+canvas {
+    border: 1px solid black;
 }
