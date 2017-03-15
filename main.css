@@ -403,6 +403,7 @@ img {
 }
 
 #balloonimg img {
+    display: none;
     height: 46.7px;
     width: 41.0px;
 }
