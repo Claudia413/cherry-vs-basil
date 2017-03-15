@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-/*    border: 1px solid; */
+    /*    border: 1px solid; */
 }
 
 #leaf-header {
@@ -39,6 +39,20 @@
     background-color: rgba(500, 500, 500, 0.85);
 }
 
+.navigation_on {
+    background-color: rgba(300, 300, 300, 0.95);
+}
+
+.navigation .navigation_on a {
+    color: #5771b8;
+
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: #6a6a6a;
+}
+
 .navigation li {
     float: left;
     list-style: none;
@@ -50,19 +64,32 @@
     padding-bottom: 6px;
     font-family: "Raleway", sans-serif;
     /*    font-size: 26px; */
-    font-size: 2.1vw;
+    /*    font-size: 2.1vw; */
     color: #ffffff;
 }
 
-.navigation li a {
-    text-decoration: none;
-    color: #6a6a6a;
+@media screen and (min-width: 570px) {
+    .navigation li {
+        font-size: 26px;
+    }
 }
 
-.navigation li a:hover {
-    color: #f0f0f0;
-    text-decoration: none;
+@media screen and (max-width: 569px) {
+    .navigation li {
+        font-size: 18px;
+    }
 }
+
+@media screen and (max-width: 250px) {
+    .navigation li {
+        font-size: 2.1vw;
+    }
+}
+
+/*.navigation li a:hover {*/
+/*color: #5771b8;*/
+/*text-decoration: none;*/
+/*}*/
 
 #maincontent {
     background: #fff;
@@ -139,8 +166,22 @@ img {
     height: 150px;
 }
 
+#leaf1:hover {
+    background: url("imgs/leaf1H.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
 #leaf2 {
     background: url("imgs/leaf2.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
+#leaf2:hover {
+    background: white;
     background-size: 150px 150px;
     width: 150px;
     height: 150px;
@@ -153,11 +194,25 @@ img {
     height: 150px;
 }
 
+#leaf3:hover {
+    background: url("imgs/leaf3H.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
 #leaf4 {
     background: url("imgs/leaf4.gif") no-repeat;
     background-size: 150px 150px;
     width: 150px;
     height: 150px;
+}
+
+#leaf4:hover {
+    background: url("imgs/leaf4H.gif") no-repeat;
+    background-size: 160px 160px;
+    width: 160px;
+    height: 160px;
 }
 
 #leaf5 {
@@ -167,8 +222,22 @@ img {
     height: 150px;
 }
 
+#leaf5:hover {
+    background: url("imgs/leaf5H.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
 #leaf6 {
     background: url("imgs/leaf6.gif") no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
+#leaf6:hover {
+    background: url("imgs/leaf6H.gif") no-repeat;
     background-size: 150px 150px;
     width: 150px;
     height: 150px;
@@ -182,11 +251,12 @@ img {
     background: url("imgs/autumn-leafs-1.jpg") repeat-x;
     background-attachment: fixed;
     margin-left: 0;
+    padding-left: 0;
 }
 
 .about_text {
     color: white;
-    margin-top: 30px;
+    margin: 30px 0 0 0%;
     /*margin: 50px 0 0 10px;*/
 }
 
@@ -198,6 +268,7 @@ img {
     float: left;
     position: relative;
     margin-top: 30px;
+    padding-left: 15px;
     /*margin: 50px 10px 0px;*/
 }
 
@@ -231,7 +302,7 @@ img {
 .contact_map {
     max-width: 500px;
     text-align: center;
-    position: relative;
+    /*    position: relative; */
     margin-top: 30px;
 }
 
@@ -242,6 +313,101 @@ img {
 
 .social_buttons i {
     color: white;
-    font-size: 45px;
-    margin-right: 50%;
+    font-size: 52px;
+    margin: 8px 0 10px 0;
+}
+
+.no_margin {
+    margin: 0;
+}
+
+/* World's wonkiest moving/dancing/chameleon menu below */
+/* .navigation li a:hover {
+    color: #f0f0f0;
+    text-decoration: none;
+    }
+
+.navigation li a:hover ~ ul .menublock {
+    display: block;
+    opacity: 1;
+    background-color: lightgrey;
+    height: auto;
+    width: auto;
+    z-index: 1000;
+    }
+
+.navigation li a:hover ~ ul {
+    z-index: 99999999;
+}
+
+.navigation li ul li:hover {
+    display: block;
+    opacity: 1;
+    background-color: pink;
+    height: auto;
+    width: auto;
+    padding: 0 5px;
+    z-index: 1000;
+}
+
+.move-down:hover {
+    display: block;
+    transform: translate(0, 5);
+    -webkit-transform: translate(0, 5px);
+}
+
+/*.menublock {*/
+/*visibility: visible;*/
+/*background-color: grey;*/
+/*height: auto;*/
+/*width: auto;*/
+/*}*/
+/* .menublock {
+    /*visibility: hidden;*/
+/*    opacity: 0;
+}
+.menublock:hover {
+    visibility: visible;
+
+}
+
+.object {
+    -webkit-transition: all 2s ease-in-out;
+    z-index: 100;
+}
+
+.object li{
+    color: #5771b8;
+    font-size: 15px;
+}
+
+.navigation li ul:hover {
+    position: absolute;
+    z-index: 999999;
+}
+
+.navigation li ul {
+    position: absolute;
+    z-index: -999999;
+    padding: 5px;
+} */
+
+/* Css for game below */
+
+#balloonimg {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 46.7px;
+    width: 41.0px;
+}
+
+#balloonimg img {
+    display: none;
+    height: 46.7px;
+    width: 41.0px;
+}
+
+canvas {
+    border: 1px solid black;
 }
