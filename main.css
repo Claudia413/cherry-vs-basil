@@ -411,3 +411,9 @@ img {
 canvas {
     border: 1px solid black;
 }
+
+.gamecontainer {
+    border: 1px solid black;
+    height: 501px;
+    width: 751px;
+}
