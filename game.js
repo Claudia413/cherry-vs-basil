@@ -14,7 +14,7 @@ $(document).ready(function () {
     var myObstacles = [];
     var myBackground;
     var myScore;
-
+    var resetbutton = document.getElementById("resetbutton");
 
     function startGame() {
         myBackground = new item(750, 500, "desert.gif", 0, 0);
@@ -52,7 +52,6 @@ $(document).ready(function () {
     };
 
 
-
     function everyinterval(n) {
         if ((myGameArea.frameNo / n) % 1 == 0) {
             return true;
@@ -67,6 +66,8 @@ $(document).ready(function () {
         this.speedY = 0;
         this.x = x;
         this.y = y;
+        this.originalX = x;
+        this.originalY = y;
         this.update = function () {
             ctx = myGameArea.context;
             ctx.fillStyle = color;
@@ -76,6 +77,10 @@ $(document).ready(function () {
         this.newPos = function () {
             this.x += this.speedX;
             this.y += this.speedY;
+        };
+        this.reset = function () {
+            this.x = this.originalX;
+            this.y = this.originalY;
         };
         this.crashWith = function (otherobj) {
             var myleft = this.x;
@@ -173,12 +178,13 @@ $(document).ready(function () {
 
     function updateGameArea() {
         var x, y;
+        var stopped = false;
         for (i = 0; i < myObstacles.length; i += 1) {
             if (myGamePiece.crashWith(myObstacles[i])) {
                 myGameArea.stop();
                 ctx = myGameArea.context;
                 ctx.drawImage(pang, 0, 0, 750, 500);
-                
+
                 console.log('pang');
                 return;
 
@@ -234,6 +240,17 @@ $(document).ready(function () {
         myGamePiece.update();
     }
 
+
+    $("#buttonreset").click(function () {
+        myGameArea.stop();
+        myGameArea.clear();
+        myGameArea.frameNo = 0;
+        myGamePiece.reset();
+        myObstacles = [];
+        myGameArea.start();
+    });
+
+
     function moveup() {
         myGamePiece.speedY -= 1;
     }
@@ -252,5 +269,5 @@ $(document).ready(function () {
 
 
     startGame();
-    myGameArea.start();
+
 });
