@@ -35,14 +35,13 @@ $(document).ready(function () {
             this.interval = setInterval(updateGameArea, 20);
             window.addEventListener('keydown', function (e) {
                 myGameArea.key = e.keyCode;
-                if (keys.indexOf(e.keyCode) > -1) {
+                if (keys.indexOf(e.keyCode) > 0) {
                     e.preventDefault();
                 }
             });
 
             window.addEventListener('keyup', function (e) {
                 myGameArea.key = false;
-                e.preventDefault();
             });
             window.addEventListener('touchmove', function (e) {
                 myGameArea.x = e.touches[0].screenX;
