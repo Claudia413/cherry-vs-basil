@@ -6,8 +6,8 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="main.css"/>
 
 </head>
@@ -19,7 +19,44 @@
 <!--<img id="cactusBottom" src="imgs/cactusBottom.gif">-->
 <!--<img id="cactusTop" src="imgs/cactusTop.gif">-->
 <!--</canvas>-->
+<header id="header"> <!-- Here comes the banner and the mainmenu -->
 
+    <div id="leaf-header">
+        <a href="index.html">
+            <div id="logo"></div>
+        </a>
+
+        <div><h1>Leaf Bonanza!</h1></div>
+
+        <!-- this is the menu -->
+        <ul class="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="what.html">What's going on here?</a></li>
+            <li><a href="history.html">History</a>
+            <li><a href="gamepage.html">Save the balloon</a>
+                <!--                <ul>
+                                    <li class="menublock object move-down"><a href="#">Ancient History</a>
+                                       <!-- <ul>
+                                            <li>Stone Age</li>
+                                            <li>Ice Age</li>
+                                        </ul>
+                                    </li>
+                                    <li class="menublock object move-down"><a href="#">Future History</a>
+                                        <!--<ul>
+                                            <li>Nothing here</li>
+                                            <li>No spoilers!</li>
+                                        </ul>
+                                    </li>
+                                </ul> -->
+            </li>
+        </ul>
+    </div>
+</header>
+<h1> Save the balloon</h1>
+<h4 class="center">Save the balloon from begin popped by the pointy cacti. Control the balloon movements with the arrow keys or with a-w-s-d keys.</h4>
+<p class="center">Popping is inevitable but can you make it further down the desert than your colleague?</p>
+<button id="buttonreset">Reset</button>
+<div class="container-fluid gamecontainer"></div>
 
 <div id="gameview">
     <div id="balloonimg">
@@ -31,5 +68,6 @@
     </div>
 </div>
 <script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="game.js"></script>
 </body>
 </html>
