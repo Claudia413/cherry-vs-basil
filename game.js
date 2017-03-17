@@ -15,6 +15,7 @@ $(document).ready(function () {
     var myBackground;
     var myScore;
     var resetbutton = document.getElementById("resetbutton");
+    var keys = [37, 65, 39, 68, 38, 87, 40, 83];
 
     function startGame() {
         myBackground = new item(750, 500, "desert.gif", 0, 0);
@@ -34,9 +35,14 @@ $(document).ready(function () {
             this.interval = setInterval(updateGameArea, 20);
             window.addEventListener('keydown', function (e) {
                 myGameArea.key = e.keyCode;
+                if (keys.indexOf(e.keyCode) > -1) {
+                    e.preventDefault();
+                }
             });
+
             window.addEventListener('keyup', function (e) {
                 myGameArea.key = false;
+                e.preventDefault();
             });
             window.addEventListener('touchmove', function (e) {
                 myGameArea.x = e.touches[0].screenX;
