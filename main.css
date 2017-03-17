@@ -6,9 +6,9 @@
 
 #leaf-header {
     width: 100%;
-    height: 250px;
+    height: 450px;
     font-family: "Raleway", sans-serif;
-    background: url("imgs/autumn-leafs-1.jpg") repeat-x;
+    background: url("imgs/autumn-leafs-5.jpg") repeat-x;
     background-attachment: fixed;
     padding-top: 50px;
 }
@@ -32,19 +32,20 @@
 .navigation {
     /*    display: inline-flex; */
     display: flex;
-    margin-top: -8px;
+    margin-top: 165px;
     width: 100%;
-    height: 25%;
+    height: 20%;
     text-decoration: none;
-    background-color: rgba(500, 500, 500, 0.85);
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
-.navigation_on {
-    background-color: rgba(300, 300, 300, 0.95);
-}
+/*.navigation_on {*/
+    /*background-color: rgba(255, 255, 255, 0.95);*/
+/*}*/
 
 .navigation .navigation_on a {
-    color: #5771b8;
+    color: #7a654c;
+    font-weight: 600;
 
 }
 
@@ -248,7 +249,7 @@ img {
     min-height: 200px;
     width: 100%;
     /* background: #b9caf4; */
-    background: url("imgs/autumn-leafs-1.jpg") repeat-x;
+    background: url("imgs/autumn-leafs-5.jpg") repeat-x;
     background-attachment: fixed;
     margin-left: 0;
     padding-left: 0;
@@ -315,6 +316,13 @@ img {
     color: white;
     font-size: 52px;
     margin: 8px 0 10px 0;
+}
+
+.social_buttons i:hover {
+    color: white;
+    font-size: 52px;
+    margin: 6px 0 10px 0;
+    text-shadow: 0px 3px #6a6a6a;
 }
 
 .no_margin {
@@ -413,7 +421,32 @@ canvas {
 }
 
 .gamecontainer {
-    border: 1px solid black;
-    height: 501px;
-    width: 751px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 0;
+    border: 0px solid black;
+    height: 500px;
+    width: 750px;
+}
+
+.center{
+    text-align: center;
+    padding: 5px;
+}
+
+#buttonreset {
+    height: auto;
+    width: 100px;
+    margin-left: 45%;
+    margin-right: 45%;
+    padding: 8px;
+}
+
+button {
+    font-size: 20px;
+    text-align: center;
+}
+
+.item {
+    height: 550px;
 }
