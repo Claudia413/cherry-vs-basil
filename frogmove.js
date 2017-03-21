@@ -5,6 +5,11 @@
 $(function () {
     $('#no').click(function () {
         $('.nobubble').show().delay(3000).fadeOut(400);
+        $('#mouth').removeClass('froglip');
+        $('#mouth').addClass('froglipsad');
+        setTimeout(function() {$('#mouth').removeClass('froglipsad');
+            $('#mouth').addClass('froglip');}, 3000);
+
     });
 
     $('#shakeplease').click(function () {
