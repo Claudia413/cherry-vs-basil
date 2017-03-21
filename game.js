@@ -12,16 +12,17 @@ $(document).ready(function () {
     var desert = document.getElementById("desert");
     var myGamePiece;
     var myObstacles = [];
-    var myBackground;
     var myScore;
     var resetbutton = document.getElementById("resetbutton");
+    var buttonInsane = document.getElementById("buttonInsane");
     var keys = [37, 65, 39, 68, 38, 87, 40, 83];
 
     function startGame() {
-        myBackground = new item(750, 500, "desert.gif", 0, 0);
+        // myBackground = new item(750, 500, "desert.gif", 0, 0);
         myGamePiece = new component(41, 47, "blue", 5, 220);
         myScore = new score("30px", "Arial", "black", 280, 40, "text");
         myGameArea.start();
+
     }
 
     var myGameArea = {
@@ -255,6 +256,9 @@ $(document).ready(function () {
         myGameArea.start();
     });
 
+    $("#buttonInsane").click(function () {
+        $("div.gamecontainer").toggleClass("canvasAnOn")
+    });
 
     function moveup() {
         myGamePiece.speedY -= 1;
