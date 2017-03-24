@@ -14,7 +14,6 @@
 <div class="maincontent container-fluid">
 
 
-
     <div id="controls">
         <ul>
             <li>
@@ -29,41 +28,76 @@
             <li>
                 <button id="armsup" class="buttoncontrol">Ok, put them back up, this is even worse...</button>
             </li>
+            <li>
+                <button id="standUp" class="buttoncontrol">Stand up gracefully please.</button>
+            </li>
+            <li>
+                <button id="cheer" class="buttoncontrol">I think you're cool!</button>
+            </li>
+            <li>
+                <button id="notcool" class="buttoncontrol">I don't think you're cool...</button>
+            </li>
+
+        </ul>
+        <ul>
+            <li class="lookcontrol">Change my look</li>
+            <li class="lookcontrol">
+                <input id="normal" class="lookcontrol" checked type="radio" name="look" value="normal"> Normal frog <br>
+            </li>
+            <li class="lookcontrol">
+                <input id="cool" class="lookcontrol" type="radio" name="look" value="koeleKikker"> Cool frog <br>
+            </li>
+            <li class="lookcontrol">
+                <input id="pirate" class="lookcontrol" type="radio" name="look" value="pirate"> Pirate frog <br>
+            </li>
         </ul>
     </div>
 
     <div class="frog">
-        <div class="frogface">
+        <div id="head" class="frogface">
+            <div class="sunglasses"></div>
             <div class="eye one">
-                <div class="pupil one"></div>
+                <div class="pupil one">
+                    <div id="tearOne" class="tear"></div>
+                </div>
             </div>
             <div class="eye two">
-                <div class="pupil two"></div>
+                <div class="pupil two">
+                    <div id="tearTwo" class="tear"></div>
+                </div>
             </div>
             <div class="frogmouth">
                 <div id="mouth" class="froglip"></div>
             </div>
         </div>
-        <div class="frogbody">
+
+        <div class="frogbody body">
             <div class="frogneck"></div>
             <div class="frogtorso">
                 <div class="frogbelly"></div>
             </div>
-            <div class="frogleg one">
+
+            <div id="froglegOne" class="frogleg one"></div>
+
+            <div id="invisiFroglegOne" class="invisible one">
+                <div id="froglegLowOne" class="frogleglow one">
+                    <div id="leftFoot" class="frogfoot one"></div>
+                </div>
             </div>
-            <div class="frogleglow one">
-                <div class="frogfoot one"></div>
+
+            <div id="froglegTwo" class="frogleg two"></div>
+
+            <div id="invisiFroglegTwo" class="invisible two">
+                <div id="froglegLowTwo" class="frogleglow two">
+                    <div id="rightFoot" class="frogfoot two"></div>
+                </div>
             </div>
-            <div class="frogleg two">
-            </div>
-            <div class="frogleglow two">
-                <div class="frogfoot two"></div>
-            </div>
-            <div class="frogarm one">
+
+            <div id="frogarmOne" class="frogarm one">
                 <div class="froghand one"></div>
                 <div class="froghand oneb"></div>
             </div>
-            <div class="frogarm two">
+            <div id="frogarmTwo" class="frogarm two">
                 <div class="froghand two"></div>
                 <div class="froghand twob"></div>
             </div>
@@ -72,7 +106,8 @@
 
 </div>
 
-<div class="nobubble"><p>No!</p></div>
+<div id=notext class="textbubble"><p>No!</p></div>
+<div id="welcome" class="textbubble"><p>Hi! My name is Bob.</p></div>
 
 <script type="text/javascript" src="frogmove.js"></script>
 </body>
