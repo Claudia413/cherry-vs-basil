@@ -6,6 +6,8 @@ $(document).ready(function () {
     $('#welcome').show().delay(3000).fadeOut(400);
 });
 
+var time = new Date().getMinutes;
+
 $(function () {
 
 
@@ -36,7 +38,7 @@ $(function () {
         $('.frogarm').removeClass('animated shake');
     });
 
-    $('#standUp').click(function () {
+    $('#standUp').click(function standUpNow() {
         $('#froglegOne').addClass('standUpA');
         $('#invisiFroglegOne').addClass('standUpA');
         $('#froglegTwo').addClass('standUpB');
@@ -61,6 +63,11 @@ $(function () {
         }, 6000);
     });
 
+
+    // if (time == 23) {
+    //      standUpNow();
+    // }
+
     $('#cool').click(function () {
         $('.pupil').css('border-color', '#333333');
         $('#mouth').addClass('froglipSmirk');
@@ -76,6 +83,32 @@ $(function () {
     $('#cheer').click(function () {
         $('#frogarmOne').addClass('standUpArm1');
         $('#frogarmTwo').addClass('standUpArm2');
+        $('#mouth').removeClass('froglipsad');
+        $('#mouth').addClass('froglip');
+        setTimeout(function () {
+            $('#frogarmOne').removeClass('standUpArm1');
+            $('#frogarmTwo').removeClass('standUpArm2');
+        }, 4000);
     });
 
+    $('#notcool').click(function () {
+        $('#tearOne').css ('display', 'block');
+        $('#tearOne').toggleClass ('tearsOne');
+        $('#tearTwo').toggleClass ('tearsTwo');
+        $('#mouth').removeClass('froglip');
+        $('#mouth').addClass('froglipsad');
+        $('#tearTwo').css ('display', 'block');
+        $('#notcool').text("No, don't cry, I'm sorry, you are cool!");
+        setTimeout(function () {
+            $('#notcool').text("I don't think you're cool...");
+        }, 2000);
+        setTimeout(function () {
+            $('#tearOne').toggleClass ('tearsOne');
+            $('#tearTwo').toggleClass ('tearsTwo');
+            $('#tearOne').css ('display', 'none');
+            $('#tearTwo').css ('display', 'none');
+        }, 3000);
+
+
+    })
 });

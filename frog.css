@@ -270,17 +270,17 @@
 }
 
 .frogarm.one {
-    left: -45px;
-    top: 0px;
+    left: 40px;
+    top: 180px;
     transform: rotate(130deg);
-    -webkit-transform-origin: center bottom ;
+    -webkit-transform-origin: center top ;
 }
 
 .frogarm.two {
-    right: -45px;
-    top: 0px;
+    right: 40px;
+    top: 180px;
     transform: rotate(-130deg);
-    -webkit-transform-origin: center bottom ;
+    -webkit-transform-origin: center top ;
 }
 
 .froghand {
@@ -548,63 +548,61 @@ p {
 /*Below is animation for moving Arm 1 up*/
 
 .standUpArm1 {
-    animation: standUpArm1 linear 6s;
+    animation: standUpArm1 linear 4s;
     animation-iteration-count: 1;
-    /*transform-origin: 50% 50%;*/
+    transform-origin: 50% 50%;
+    z-index: 50;
 }
 
 @keyframes standUpArm1 {
     0% {
-        transform: translate(0px, 0px) rotate(0deg);
-    }
-    10% {
-        transform: translate(0px, 0px) rotate(0deg);
+        transform: translate(0px, 0px) rotate(130deg);
+        z-index: 50;
     }
     20% {
-        transform: translate(0px, 0px) rotate(0deg);
+        transform: translate(0px, -5px) rotate(190deg);
     }
-    30% {
-        transform: translate(0px, 0px) rotate(0deg);
+    40% {
+        transform: translate(0px, -10px) rotate(130deg);
     }
-    72% {
-        transform: translate(0px, 0px) rotate(0deg);
+    60% {
+        transform: translate(0px, -10px) rotate(190deg);
     }
-    85% {
-        transform: translate(0px, 0px) rotate(0deg);
+    80% {
+        transform: translate(0px, -5px) rotate(170deg);
     }
     100% {
-        transform: translate(0px, 0px) rotate(0deg);
+        transform: translate(0px, 0px) rotate(130deg);
     }
 }
 /*Below is animation for moving Arm 2 up*/
 
 .standUpArm2 {
-    animation: standUpArm2 linear 6s;
+    animation: standUpArm2 linear 4s;
     animation-iteration-count: 1;
-    /*transform-origin: 50% 50%;*/
+    transform-origin: 50% 50%;
+    z-index: 50;
 }
 
 @keyframes standUpArm2 {
     0% {
-        transform: translate(0px, 0px) rotate(0deg);
-    }
-    10% {
-        transform: translate(0px, -2px) rotate(0deg);
+        transform: translate(0px, 0px) rotate(-130deg);
+        z-index: 50;
     }
     20% {
-        transform: translate(0px, -4px) rotate(0deg);
+        transform: translate(0px, -5px) rotate(-190deg);
     }
-    30% {
-        transform: translate(0px, -6px) rotate(0deg);
+    40% {
+        transform: translate(0px, -10px) rotate(-130deg);
     }
-    72% {
-        transform: translate(0px, -6px) rotate(0deg);
+    60% {
+        transform: translate(0px, -10px) rotate(-190deg);
     }
-    85% {
-        transform: translate(0px, -6px) rotate(0deg);
+    80% {
+        transform: translate(0px, -5px) rotate(-170deg);
     }
     100% {
-        transform: translate(0px, -10px) rotate(0deg);
+        transform: translate(0px, 0px) rotate(-130deg);
     }
 }
 
@@ -618,19 +616,19 @@ p {
     0% {
         transform: translate(0px, 0px) rotate(25deg);
     }
-    10% {
+    17% {
         transform: translate(0px, -2px) rotate(15deg);
     }
-    20% {
+    34% {
         transform: translate(0px, -3px) rotate(30deg);
     }
-    30% {
+    50% {
         transform: translate(-2px, -4px) rotate(60deg);
     }
-    72% {
+    66% {
         transform: translate(-3px, -7px) rotate(90deg);
     }
-    85% {
+    83% {
         transform: translate(-4px,-10px) rotate(90deg);
     }
     100% {
@@ -671,29 +669,95 @@ p {
 /*TEARS ANIMATION STUFF BELOW*/
 
 .tear {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    width: 10em;
-    height: 10em;
+    position: absolute;
+    display: none;
+    top: 25px;
+    width: 10px;
+    height: 10px;
     border: none;
     -webkit-border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
     border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
     font: normal 100%/normal Arial, Helvetica, sans-serif;
     color: rgba(0,0,0,1);
-    -o-text-overflow: clip;
-    text-overflow: clip;
-    background: -webkit-linear-gradient(-114.44395478041656deg, rgba(183,222,237,1) 0, rgba(113,206,239,1) 28%, rgba(33,180,226,1) 51%, rgba(40,145,183,1) 94%, rgba(40,145,183,1) 100%), #1abc9c;
-    background: -moz-linear-gradient(204.44395478041656deg, rgba(183,222,237,1) 0, rgba(113,206,239,1) 28%, rgba(33,180,226,1) 51%, rgba(40,145,183,1) 94%, rgba(40,145,183,1) 100%), #1abc9c;
-    background: linear-gradient(204.44395478041656deg, rgba(183,222,237,1) 0, rgba(113,206,239,1) 28%, rgba(33,180,226,1) 51%, rgba(40,145,183,1) 94%, rgba(40,145,183,1) 100%), #1abc9c;
-    background-position: 50% 50%;
-    -webkit-background-origin: padding-box;
-    background-origin: padding-box;
-    -webkit-background-clip: border-box;
-    background-clip: border-box;
-    -webkit-background-size: auto auto;
-    background-size: auto auto;
-    -webkit-transform: rotateZ(-45deg)   ;
-    transform: rotateZ(-45deg)   ;
+    z-index: -1;
+    /*-o-text-overflow: clip;*/
+    /*text-overflow: clip;*/
+    background: -webkit-linear-gradient(-114.4deg, rgba(183,222,237,1) 0, rgba(113,206,239,1) 28%, rgba(33,180,226,1) 51%, rgba(40,145,183,1) 94%, rgba(40,145,183,1) 100%), #1abc9c;
+    background: -moz-linear-gradient(204.4deg, rgba(183,222,237,1) 0, rgba(113,206,239,1) 28%, rgba(33,180,226,1) 51%, rgba(40,145,183,1) 94%, rgba(40,145,183,1) 100%), #1abc9c;
+    background: linear-gradient(204.4deg, rgba(183,222,237,1) 0, rgba(113,206,239,1) 28%, rgba(33,180,226,1) 51%, rgba(40,145,183,1) 94%, rgba(40,145,183,1) 100%), #1abc9c;
+    /*background-position: 50% 50%;*/
+    /*-webkit-background-origin: padding-box;*/
+    /*background-origin: padding-box;*/
+    /*-webkit-background-clip: border-box;*/
+    /*background-clip: border-box;*/
+    /*-webkit-background-size: auto auto;*/
+    /*background-size: auto auto;*/
+    /*-webkit-transform: rotateZ(45deg)   ;*/
+    /*transform: rotateZ(45deg)   ;*/
 }
+
+.tearsOne {
+    animation: tearsOne linear 2s;
+    animation-iteration-count: 3;
+    transform-origin: 50% 50%;
+    z-index: -3;
+}
+
+@keyframes tearsOne {
+    0% {
+        transform: translate(-5px, 0px) rotate(-20deg);
+    }
+    16% {
+        transform: translate(-15px, 50px) rotate(-30deg);
+    }
+    33% {
+        transform: translate(-25px, 100px) rotate(-40deg);
+    }
+    50% {
+        transform: translate(-35px, 150px) rotate(-40deg);
+    }
+    66% {
+        transform: translate(-45px, 200px) rotate(-40deg);
+    }
+    83% {
+        transform: translate(-55px, 250px) rotate(-40deg);
+    }
+    100% {
+        transform: translate(-65px, 300px) rotate(-40deg);
+    }
+}
+
+.tearsTwo {
+    animation: tearsTwo linear 2s;
+    animation-iteration-count: 3;
+    transform-origin: 50% 50%;
+    z-index: -3;
+    animation-delay: 0.5s;
+
+}
+
+@keyframes tearsTwo {
+    0% {
+        transform: translate(5px, 0px) rotate(-20deg) scale(0.05, 1);
+    }
+    16% {
+        transform: translate(15px, 50px) rotate(-30deg);
+    }
+    33% {
+        transform: translate(25px, 100px) rotate(-50deg);
+    }
+    50% {
+        transform: translate(35px, 150px) rotate(-50deg);
+    }
+    66% {
+        transform: translate(45px, 200px) rotate(-50deg);
+    }
+    83% {
+        transform: translate(55px, 250px) rotate(-50deg);
+    }
+    100% {
+        transform: translate(65px, 300px) rotate(-50deg);
+    }
+}
+
 
