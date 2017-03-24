@@ -72,12 +72,27 @@ $(function () {
         $('.pupil').css('border-color', '#333333');
         $('#mouth').addClass('froglipSmirk');
         $('.sunglasses').show();
+        $('.sunglasses').css('width', '110')
+        $('.frogleglow.two').css('background-color', '#53b28f')
+        $('.frogfoot.two').css('display', 'block');
     });
 
     $('#normal').click(function () {
         $('.pupil').css('border-color', '#ffffff');
         $('#mouth').removeClass('froglipSmirk');
         $('.sunglasses').hide(0);
+        $('.frogleglow.two').css('background-color', '#53b28f')
+        $('.frogfoot.two').css('display', 'block');
+    });
+
+    $('#pirate').click(function () {
+        $('.pupil.one').css('border-color', '#333333');
+        $('.pupil.two').css('border-color', '#ffffff');
+        $('#mouth').addClass('froglipSmirk');
+        $('.sunglasses').show(0);
+        $('.sunglasses').css('width', '45')
+        $('.frogleglow.two').css('background-color', '#7A654C')
+        $('.frogfoot.two').css('display', 'none');
     });
 
     $('#cheer').click(function () {
