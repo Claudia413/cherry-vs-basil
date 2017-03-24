@@ -42,6 +42,7 @@ $(function () {
 
     //This happens when you click Stand up gracefully please
     $('#standUp').click(function standUpNow() {
+        $('.tophattop').addClass('standUpBody');
         $('#froglegOne').addClass('standUpA');
         $('#invisiFroglegOne').addClass('standUpA');
         $('#froglegTwo').addClass('standUpB');
@@ -53,6 +54,7 @@ $(function () {
         $('#leftFoot').addClass('leftFoot');
         $('#rightFoot').addClass('rightFoot');
         setTimeout(function () {
+            $('#hat').removeClass('standUpBody');
             $('#head').removeClass('standUpBody');
             $('#froglegOne').removeClass('standUpA');
             $('#invisiFroglegOne').removeClass('standUpA');
@@ -105,6 +107,7 @@ $(function () {
         }, 4000);
     });
 
+    //This happens when you click How do you feel about your look?
     $('#opinion').click(function () {
         var look = $('input[name=look]:checked', '#look').val();
         switch (look) {
@@ -118,7 +121,17 @@ $(function () {
                 $('#opinionPirate').show().delay(3000).fadeOut(400);
                 break;
         }
+    });
 
+    // This happens when you click How about a hat?
+    $('#hat').click(function () {
+        $('.tophattop').toggle(1, 'swing', function () {
+            if ($('.tophattop').is(':visible')) {
+                $('#hat').text("How about no?");
+            } else {
+                $('#hat').text("How about a hat?");
+            }
+        });
     });
 
     //

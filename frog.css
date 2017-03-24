@@ -20,6 +20,29 @@
 
 }
 
+.tophattop {
+    display: none;
+    position: absolute;
+    background-color: #494949;
+    height: 80px;
+    width: 100px;
+    top: -35px;
+    left: 150px;
+    border-radius: 3px;
+    z-index: 100;
+}
+
+.tophatbottom {
+    position: absolute;
+    background-color: #494949;
+    height: 20px;
+    width: 140px;
+    top: 60px;
+    left: -20px;
+    border-radius: 5px;
+    z-index: 100;
+}
+
 .frogface {
     position: absolute;
     left: 100px;
