@@ -6,9 +6,17 @@ $(document).ready(function () {
     $('#welcome').show().delay(3000).fadeOut(400);
 });
 
-var time = new Date().getMinutes;
 
 $(function () {
+
+    setInterval(function() {
+        var time = new Date().getMinutes();
+
+        // This is the stand-up at 10AM
+        if (time == 00) {
+            standUpNow();
+        }
+    }, 30000);
 
     //This happens when you click shake your head.
     $('#no').click(function () {
@@ -41,7 +49,9 @@ $(function () {
     });
 
     //This happens when you click Stand up gracefully please
-    $('#standUp').click(function standUpNow() {
+    $('#standUp').click(standUpNow);
+
+    function standUpNow() {
         $('.tophattop').addClass('standUpBody');
         $('#froglegOne').addClass('standUpA');
         $('#invisiFroglegOne').addClass('standUpA');
@@ -54,7 +64,7 @@ $(function () {
         $('#leftFoot').addClass('leftFoot');
         $('#rightFoot').addClass('rightFoot');
         setTimeout(function () {
-            $('#hat').removeClass('standUpBody');
+            $('.tophattop').removeClass('standUpBody');
             $('#head').removeClass('standUpBody');
             $('#froglegOne').removeClass('standUpA');
             $('#invisiFroglegOne').removeClass('standUpA');
@@ -66,13 +76,7 @@ $(function () {
             $('#leftFoot').removeClass('leftFoot')
             $('#rightFoot').removeClass('rightFoot');
         }, 6000);
-    });
-
-    //This was supposed to be the stand-up at 10AM, currently not working
-    // if (time == 23) {
-    //      standUpNow();
-    // }
-
+    }
 
     //This happens when you click "I think youre cool!'
     $('#cheer').click(function () {
@@ -163,9 +167,17 @@ $(function () {
         $('.pupil.two').css('border-color', '#ffffff');
         $('#mouth').addClass('froglipSmirk');
         $('.sunglasses').show(0);
-        $('.sunglasses').css('width', '45')
-        $('.frogleglow.two').css('background-color', '#7A654C')
+        $('.sunglasses').css('width', '45');
+        $('.frogleglow.two').css('background-color', '#7A654C');
         $('.frogfoot.two').css('display', 'none');
     });
+
+    //Silly frog look
+    $('#silly').click(function (){
+        $('#tongue').addClass('frogtongue');
+        $('#pupilOne').addClass('silly silly.one');
+        $('#pupilTwo').addClass('silly silly.two');
+
+    })
 
 });
