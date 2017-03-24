@@ -1,7 +1,7 @@
 /**
  * Created by Claudia on 21-3-2017.
  */
-
+//This is the welcome message upon page load
 $(document).ready(function () {
     $('#welcome').show().delay(3000).fadeOut(400);
 });
@@ -10,7 +10,7 @@ var time = new Date().getMinutes;
 
 $(function () {
 
-
+    //This happens when you click shake your head.
     $('#no').click(function () {
         $('#notext').show().delay(3000).fadeOut(400);
         $('#mouth').removeClass('froglip');
@@ -22,22 +22,25 @@ $(function () {
 
     });
 
+    //This happens when you click shake your head, please?
     $('#shakeplease').click(function () {
         $('.frogface').addClass('animated shake');
         setTimeout(function () {
-            $('.frogface').addClass('animated shake');
             $('.frogface').removeClass('animated shake');
         }, 1000);
     });
 
+    //This happens when you click Put your arms down this looks ridiculous
     $('#armsdown').click(function () {
-        $('.frogarm').addClass('animated shake');
+        $('.frogarm').addClass('putdownArm');
     });
 
+    //This happends when you click Ok put them back up this is even worse
     $('#armsup').click(function () {
-        $('.frogarm').removeClass('animated shake');
+        $('.frogarm').removeClass('putdownArm');
     });
 
+    //This happens when you click Stand up gracefully please
     $('#standUp').click(function standUpNow() {
         $('#froglegOne').addClass('standUpA');
         $('#invisiFroglegOne').addClass('standUpA');
@@ -63,38 +66,13 @@ $(function () {
         }, 6000);
     });
 
-
+    //This was supposed to be the stand-up at 10AM, currently not working
     // if (time == 23) {
     //      standUpNow();
     // }
 
-    $('#cool').click(function () {
-        $('.pupil').css('border-color', '#333333');
-        $('#mouth').addClass('froglipSmirk');
-        $('.sunglasses').show();
-        $('.sunglasses').css('width', '110')
-        $('.frogleglow.two').css('background-color', '#53b28f')
-        $('.frogfoot.two').css('display', 'block');
-    });
 
-    $('#normal').click(function () {
-        $('.pupil').css('border-color', '#ffffff');
-        $('#mouth').removeClass('froglipSmirk');
-        $('.sunglasses').hide(0);
-        $('.frogleglow.two').css('background-color', '#53b28f')
-        $('.frogfoot.two').css('display', 'block');
-    });
-
-    $('#pirate').click(function () {
-        $('.pupil.one').css('border-color', '#333333');
-        $('.pupil.two').css('border-color', '#ffffff');
-        $('#mouth').addClass('froglipSmirk');
-        $('.sunglasses').show(0);
-        $('.sunglasses').css('width', '45')
-        $('.frogleglow.two').css('background-color', '#7A654C')
-        $('.frogfoot.two').css('display', 'none');
-    });
-
+    //This happens when you click "I think youre cool!'
     $('#cheer').click(function () {
         $('#frogarmOne').addClass('standUpArm1');
         $('#frogarmTwo').addClass('standUpArm2');
@@ -106,24 +84,75 @@ $(function () {
         }, 4000);
     });
 
+    //This happens when you click "I don't think youre cool"
     $('#notcool').click(function () {
-        $('#tearOne').css ('display', 'block');
-        $('#tearOne').toggleClass ('tearsOne');
-        $('#tearTwo').toggleClass ('tearsTwo');
+        $('#tearOne').css('display', 'block');
+        $('#tearOne').toggleClass('tearsOne');
+        $('#tearTwo').toggleClass('tearsTwo');
         $('#mouth').removeClass('froglip');
         $('#mouth').addClass('froglipsad');
-        $('#tearTwo').css ('display', 'block');
+        $('#tearTwo').css('display', 'block');
         $('#notcool').text("No, don't cry, I'm sorry, you are cool!");
+        $('#cheer').text("I dó think you're cool!");
         setTimeout(function () {
             $('#notcool').text("I don't think you're cool...");
-        }, 2000);
+        }, 3200);
         setTimeout(function () {
-            $('#tearOne').toggleClass ('tearsOne');
-            $('#tearTwo').toggleClass ('tearsTwo');
-            $('#tearOne').css ('display', 'none');
-            $('#tearTwo').css ('display', 'none');
-        }, 3000);
+            $('#tearOne').toggleClass('tearsOne');
+            $('#tearTwo').toggleClass('tearsTwo');
+            $('#tearOne').css('display', 'none');
+            $('#tearTwo').css('display', 'none');
+        }, 4000);
+    });
 
+    $('#opinion').click(function () {
+        var look = $('input[name=look]:checked', '#look').val();
+        switch (look) {
+            case 'normal':
+                $('#opinionNormal').show().delay(3000).fadeOut(400);
+                break;
+            case 'cool':
+                $('#opinionCool').show().delay(3000).fadeOut(400);
+                break;
+            case 'pirate':
+                $('#opinionPirate').show().delay(3000).fadeOut(400);
+                break;
+        }
 
-    })
+    });
+
+    //
+    //FROG LOOKS BELOW
+    //
+
+    // cool frog look
+    $('#cool').click(function () {
+        $('.pupil').css('border-color', '#333333');
+        $('#mouth').addClass('froglipSmirk');
+        $('.sunglasses').show();
+        $('.sunglasses').css('width', '110')
+        $('.frogleglow.two').css('background-color', '#53b28f')
+        $('.frogfoot.two').css('display', 'block');
+    });
+
+    //Normal frog look
+    $('#normal').click(function () {
+        $('.pupil').css('border-color', '#ffffff');
+        $('#mouth').removeClass('froglipSmirk');
+        $('.sunglasses').hide(0);
+        $('.frogleglow.two').css('background-color', '#53b28f')
+        $('.frogfoot.two').css('display', 'block');
+    });
+
+    //Pirate frog look
+    $('#pirate').click(function () {
+        $('.pupil.one').css('border-color', '#333333');
+        $('.pupil.two').css('border-color', '#ffffff');
+        $('#mouth').addClass('froglipSmirk');
+        $('.sunglasses').show(0);
+        $('.sunglasses').css('width', '45')
+        $('.frogleglow.two').css('background-color', '#7A654C')
+        $('.frogfoot.two').css('display', 'none');
+    });
+
 });
