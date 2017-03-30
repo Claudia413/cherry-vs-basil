@@ -9,14 +9,14 @@ $(document).ready(function () {
 
 $(function () {
 
-    setInterval(function() {
+    setInterval(function () {
         var time = new Date().getMinutes();
 
         // This is the stand-up at 10AM
-        if (time == 00) {
+        if (time === 00) {
             standUpNow();
         }
-    }, 30000);
+    }, 10000);
 
     //This happens when you click shake your head.
     $('#no').click(function () {
@@ -72,13 +72,13 @@ $(function () {
             $('#invisiFroglegTwo').removeClass('standUpB');
             $('#froglegLowOne').removeClass('standUpLowA');
             $('#froglegLowTwo').removeClass('standUpLowB');
-            $('.body').removeClass('standUpBody')
-            $('#leftFoot').removeClass('leftFoot')
+            $('.body').removeClass('standUpBody');
+            $('#leftFoot').removeClass('leftFoot');
             $('#rightFoot').removeClass('rightFoot');
         }, 6000);
     }
 
-    //This happens when you click "I think youre cool!'
+    //This happens when you click "I think you're cool!'
     $('#cheer').click(function () {
         $('#frogarmOne').addClass('standUpArm1');
         $('#frogarmTwo').addClass('standUpArm2');
@@ -124,6 +124,9 @@ $(function () {
             case 'pirate':
                 $('#opinionPirate').show().delay(3000).fadeOut(400);
                 break;
+            case 'silly':
+                $('#opinionSilly').show().delay(3000).fadeOut(400);
+                break;
         }
     });
 
@@ -141,28 +144,35 @@ $(function () {
     //
     //FROG LOOKS BELOW
     //
+    //Reset function to reset frog look to 'normal' standard frog look, from there other looks will be added onto it by the radio buttons for look
+    function reset() {
+        $('.pupil').css('border-color', '#ffffff');                  // removes cool frog look
+        $('#mouth').removeClass('froglipSmirk');                     // removes cool frog look
+        $('.sunglasses').hide(0);                                    // removes cool frog look
+        $('.frogleglow.two').css('background-color', '#53b28f');      // removes pirate frog look
+        $('.frogfoot.two').css('display', 'block');                  // removes pirate frog look
+        $('#tongue').removeClass('frogtongue');                      // removes silly frog look
+        $('#pupilOne').removeClass('silly silly.one');               // removes silly frog look
+        $('#pupilTwo').removeClass('silly silly.two');               // removes silly frog look
+    }
 
     // cool frog look
     $('#cool').click(function () {
+        reset();
         $('.pupil').css('border-color', '#333333');
         $('#mouth').addClass('froglipSmirk');
         $('.sunglasses').show();
         $('.sunglasses').css('width', '110')
-        $('.frogleglow.two').css('background-color', '#53b28f')
-        $('.frogfoot.two').css('display', 'block');
     });
 
     //Normal frog look
     $('#normal').click(function () {
-        $('.pupil').css('border-color', '#ffffff');
-        $('#mouth').removeClass('froglipSmirk');
-        $('.sunglasses').hide(0);
-        $('.frogleglow.two').css('background-color', '#53b28f')
-        $('.frogfoot.two').css('display', 'block');
+        reset();
     });
 
     //Pirate frog look
     $('#pirate').click(function () {
+        reset();
         $('.pupil.one').css('border-color', '#333333');
         $('.pupil.two').css('border-color', '#ffffff');
         $('#mouth').addClass('froglipSmirk');
@@ -173,11 +183,72 @@ $(function () {
     });
 
     //Silly frog look
-    $('#silly').click(function (){
+    $('#silly').click(function () {
+        reset();
         $('#tongue').addClass('frogtongue');
         $('#pupilOne').addClass('silly silly.one');
         $('#pupilTwo').addClass('silly silly.two');
+        $('#mouth').removeClass('froglipSmirk');
+    });
 
+//Wing stuff try-out
+
+    // function Feather(width, height, left, rotate) {
+    //     this.width = width;
+    //     this.height = height;
+    //     this.left = left;
+    //     this.rotate = rotate;
+    //     this.position = 'absolute';
+    //     this.transform - origin = 'left center';
+    //     this.background = '#';
+    //     this.box - shadow = '0 1px 9px 2px';
+    // }
+
+
+    var $item = $('.wingspan-right').find('.feather[data-id=0]');
+
+    function cloneFeather(width, height, left, rotate, dataid) {
+        $('.wingspan').css('display', 'block');
+        var $newItem = $item.clone();
+
+        $newItem.appendTo('.wingspan-right');
+        $newItem.css('width', width);
+        $newItem.css('height', height);
+        $newItem.css('left', left);
+        $newItem.css('transform', rotate);
+        $newItem.attr('data-id', dataid);
+    }
+
+    // function cloneFeatherLeft(width, height, left, rotate, dataid) {
+    //     $('.wingspan').css('display', 'block');
+    //     $item = $('body').find('.feather[data-id=0]');
+    //     $item.clone().appendTo('.wingspanleft');
+    //
+    //     $item.css('width', width);
+    //     $item.css('height', height);
+    //     $item.css('left', left);
+    //     $item.css('transform', rotate);
+    //     $item.attr('data-id', dataid);
+    // }
+
+    // for (var i = 0; i < 9; i++) {
+    //     cloneFeather((120 * ((i+1.5) * 0.45)), (15 * (i + 2.5) * 0.2), (i * 22), ('rotate(' + (70 - (i * 2.8)) + 'deg)'), (i + 1));
+    //}
+
+    $('#fly').click(function () {
+        for (var i = 0; i < 9; i++) {
+            cloneFeather((120 * ((i + 1.5) * 0.45)), (15 * (i + 2.5) * 0.2), (i * 22), ('rotate(' + (70 - (i * 2.8)) + 'deg)'), (i + 1));
+        }
+        $('.wingspan').addClass('rightwingfly');
+        $('.feather').addClass('rightfeatherfly');
+        setTimeout(function () {
+            $('.wingspan').hide()
+        }, 6000);
+        // for (var j = 9; j > 0; j--) {
+        //     cloneFeatherLeft((120 * ((j + 1.5) * 0.45)), (15 * (j + 2.5) * 0.2), (j * 22), ('rotate(' + (70 - (j * 2.8)) + 'deg)'), (j + 1));
+        // }
+        // $('.wingspanleft').addClass('leftwingfly');
+        // $('.featherleft').addClass('leftfeatherfly');
     })
-
 });
+
