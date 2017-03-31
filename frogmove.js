@@ -205,11 +205,12 @@ $(function () {
     // }
 
 
-    var $item = $('.wingspan-right').find('.feather[data-id=0]');
+    var $rightFeather = $('.wingspan-right').find('.feather[data-id=0]');
+    var $leftFeather = $('.wingspan-left').find('.featherleft[data-id=0]');
 
     function cloneFeather(width, height, left, rotate, dataid) {
         $('.wingspan').css('display', 'block');
-        var $newItem = $item.clone();
+        var $newItem = $rightFeather.clone();
 
         $newItem.appendTo('.wingspan-right');
         $newItem.css('width', width);
@@ -219,17 +220,17 @@ $(function () {
         $newItem.attr('data-id', dataid);
     }
 
-    // function cloneFeatherLeft(width, height, left, rotate, dataid) {
-    //     $('.wingspan').css('display', 'block');
-    //     $item = $('body').find('.feather[data-id=0]');
-    //     $item.clone().appendTo('.wingspanleft');
-    //
-    //     $item.css('width', width);
-    //     $item.css('height', height);
-    //     $item.css('left', left);
-    //     $item.css('transform', rotate);
-    //     $item.attr('data-id', dataid);
-    // }
+    function cloneFeatherLeft(width, height, right, rotate, dataid) {
+        $('.wingspan-left').css('display', 'block');
+        var $newItem = $leftFeather.clone();
+
+        $newItem.appendTo('.wingspan-left');
+        $newItem.css('width', width);
+        $newItem.css('height', height);
+        $newItem.css('right', right);
+        $newItem.css('transform', rotate);
+        $newItem.attr('data-id', dataid);
+    }
 
     // for (var i = 0; i < 9; i++) {
     //     cloneFeather((120 * ((i+1.5) * 0.45)), (15 * (i + 2.5) * 0.2), (i * 22), ('rotate(' + (70 - (i * 2.8)) + 'deg)'), (i + 1));
@@ -240,15 +241,19 @@ $(function () {
             cloneFeather((120 * ((i + 1.5) * 0.45)), (15 * (i + 2.5) * 0.2), (i * 22), ('rotate(' + (70 - (i * 2.8)) + 'deg)'), (i + 1));
         }
         $('.wingspan').addClass('rightwingfly');
-        $('.feather').addClass('rightfeatherfly');
+        // $('.feather').addClass('rightfeatherfly');
         setTimeout(function () {
             $('.wingspan').hide()
         }, 6000);
-        // for (var j = 9; j > 0; j--) {
-        //     cloneFeatherLeft((120 * ((j + 1.5) * 0.45)), (15 * (j + 2.5) * 0.2), (j * 22), ('rotate(' + (70 - (j * 2.8)) + 'deg)'), (j + 1));
-        // }
-        // $('.wingspanleft').addClass('leftwingfly');
+
+        for (var j = 9; j >= 0; j--) {
+            cloneFeatherLeft((120 * ((j + 1.5) * 0.45)), (15 * (j + 2.5) * 0.2), (j * 22), ('rotate(' + (70 - (j * 2.8)) + 'deg)'), (j + 1));
+        }
+        $('.wingspan-left').addClass('leftwingfly');
         // $('.featherleft').addClass('leftfeatherfly');
+        setTimeout(function () {
+            $('.wingspan-left').hide()
+        }, 6000);
     })
 });
 
