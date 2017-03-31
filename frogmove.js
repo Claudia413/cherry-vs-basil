@@ -6,9 +6,17 @@ $(document).ready(function () {
     $('#welcome').show().delay(3000).fadeOut(400);
 });
 
-var time = new Date().getMinutes;
 
 $(function () {
+
+    setInterval(function () {
+        var time = new Date().getMinutes();
+
+        // This is the stand-up at 10AM
+        if (time === 00) {
+            standUpNow();
+        }
+    }, 10000);
 
     //This happens when you click shake your head.
     $('#no').click(function () {
@@ -41,7 +49,9 @@ $(function () {
     });
 
     //This happens when you click Stand up gracefully please
-    $('#standUp').click(function standUpNow() {
+    $('#standUp').click(standUpNow);
+
+    function standUpNow() {
         $('.tophattop').addClass('standUpBody');
         $('#froglegOne').addClass('standUpA');
         $('#invisiFroglegOne').addClass('standUpA');
@@ -54,7 +64,7 @@ $(function () {
         $('#leftFoot').addClass('leftFoot');
         $('#rightFoot').addClass('rightFoot');
         setTimeout(function () {
-            $('#hat').removeClass('standUpBody');
+            $('.tophattop').removeClass('standUpBody');
             $('#head').removeClass('standUpBody');
             $('#froglegOne').removeClass('standUpA');
             $('#invisiFroglegOne').removeClass('standUpA');
@@ -62,19 +72,13 @@ $(function () {
             $('#invisiFroglegTwo').removeClass('standUpB');
             $('#froglegLowOne').removeClass('standUpLowA');
             $('#froglegLowTwo').removeClass('standUpLowB');
-            $('.body').removeClass('standUpBody')
-            $('#leftFoot').removeClass('leftFoot')
+            $('.body').removeClass('standUpBody');
+            $('#leftFoot').removeClass('leftFoot');
             $('#rightFoot').removeClass('rightFoot');
         }, 6000);
-    });
+    }
 
-    //This was supposed to be the stand-up at 10AM, currently not working
-    // if (time == 23) {
-    //      standUpNow();
-    // }
-
-
-    //This happens when you click "I think youre cool!'
+    //This happens when you click "I think you're cool!'
     $('#cheer').click(function () {
         $('#frogarmOne').addClass('standUpArm1');
         $('#frogarmTwo').addClass('standUpArm2');
@@ -120,6 +124,9 @@ $(function () {
             case 'pirate':
                 $('#opinionPirate').show().delay(3000).fadeOut(400);
                 break;
+            case 'silly':
+                $('#opinionSilly').show().delay(3000).fadeOut(400);
+                break;
         }
     });
 
@@ -137,35 +144,116 @@ $(function () {
     //
     //FROG LOOKS BELOW
     //
+    //Reset function to reset frog look to 'normal' standard frog look, from there other looks will be added onto it by the radio buttons for look
+    function reset() {
+        $('.pupil').css('border-color', '#ffffff');                  // removes cool frog look
+        $('#mouth').removeClass('froglipSmirk');                     // removes cool frog look
+        $('.sunglasses').hide(0);                                    // removes cool frog look
+        $('.frogleglow.two').css('background-color', '#53b28f');      // removes pirate frog look
+        $('.frogfoot.two').css('display', 'block');                  // removes pirate frog look
+        $('#tongue').removeClass('frogtongue');                      // removes silly frog look
+        $('#pupilOne').removeClass('silly silly.one');               // removes silly frog look
+        $('#pupilTwo').removeClass('silly silly.two');               // removes silly frog look
+    }
 
     // cool frog look
     $('#cool').click(function () {
+        reset();
         $('.pupil').css('border-color', '#333333');
         $('#mouth').addClass('froglipSmirk');
         $('.sunglasses').show();
         $('.sunglasses').css('width', '110')
-        $('.frogleglow.two').css('background-color', '#53b28f')
-        $('.frogfoot.two').css('display', 'block');
     });
 
     //Normal frog look
     $('#normal').click(function () {
-        $('.pupil').css('border-color', '#ffffff');
-        $('#mouth').removeClass('froglipSmirk');
-        $('.sunglasses').hide(0);
-        $('.frogleglow.two').css('background-color', '#53b28f')
-        $('.frogfoot.two').css('display', 'block');
+        reset();
     });
 
     //Pirate frog look
     $('#pirate').click(function () {
+        reset();
         $('.pupil.one').css('border-color', '#333333');
         $('.pupil.two').css('border-color', '#ffffff');
         $('#mouth').addClass('froglipSmirk');
         $('.sunglasses').show(0);
-        $('.sunglasses').css('width', '45')
-        $('.frogleglow.two').css('background-color', '#7A654C')
+        $('.sunglasses').css('width', '45');
+        $('.frogleglow.two').css('background-color', '#7A654C');
         $('.frogfoot.two').css('display', 'none');
     });
 
+    //Silly frog look
+    $('#silly').click(function () {
+        reset();
+        $('#tongue').addClass('frogtongue');
+        $('#pupilOne').addClass('silly silly.one');
+        $('#pupilTwo').addClass('silly silly.two');
+        $('#mouth').removeClass('froglipSmirk');
+    });
+
+//Wing stuff try-out
+
+    // function Feather(width, height, left, rotate) {
+    //     this.width = width;
+    //     this.height = height;
+    //     this.left = left;
+    //     this.rotate = rotate;
+    //     this.position = 'absolute';
+    //     this.transform - origin = 'left center';
+    //     this.background = '#';
+    //     this.box - shadow = '0 1px 9px 2px';
+    // }
+
+
+    var $rightFeather = $('.wingspan-right').find('.feather[data-id=0]');
+    var $leftFeather = $('.wingspan-left').find('.featherleft[data-id=0]');
+
+    function cloneFeather(width, height, left, rotate, dataid) {
+        $('.wingspan').css('display', 'block');
+        var $newItem = $rightFeather.clone();
+
+        $newItem.appendTo('.wingspan-right');
+        $newItem.css('width', width);
+        $newItem.css('height', height);
+        $newItem.css('left', left);
+        $newItem.css('transform', rotate);
+        $newItem.attr('data-id', dataid);
+    }
+
+    function cloneFeatherLeft(width, height, right, rotate, dataid) {
+        $('.wingspan-left').css('display', 'block');
+        var $newItem = $leftFeather.clone();
+
+        $newItem.appendTo('.wingspan-left');
+        $newItem.css('width', width);
+        $newItem.css('height', height);
+        $newItem.css('right', right);
+        $newItem.css('transform', rotate);
+        $newItem.attr('data-id', dataid);
+    }
+
+    // for (var i = 0; i < 9; i++) {
+    //     cloneFeather((120 * ((i+1.5) * 0.45)), (15 * (i + 2.5) * 0.2), (i * 22), ('rotate(' + (70 - (i * 2.8)) + 'deg)'), (i + 1));
+    //}
+
+    $('#fly').click(function () {
+        for (var i = 0; i < 9; i++) {
+            cloneFeather((120 * ((i + 1.5) * 0.45)), (15 * (i + 2.5) * 0.2), (i * 22), ('rotate(' + (70 - (i * 2.8)) + 'deg)'), (i + 1));
+        }
+        $('.wingspan').addClass('rightwingfly');
+        // $('.feather').addClass('rightfeatherfly');
+        setTimeout(function () {
+            $('.wingspan').hide()
+        }, 6000);
+
+        for (var j = 9; j >= 0; j--) {
+            cloneFeatherLeft((120 * ((j + 1.5) * 0.45)), (15 * (j + 2.5) * 0.2), (j * 22), ('rotate(' + (70 - (j * 2.8)) + 'deg)'), (j + 1));
+        }
+        $('.wingspan-left').addClass('leftwingfly');
+        // $('.featherleft').addClass('leftfeatherfly');
+        setTimeout(function () {
+            $('.wingspan-left').hide()
+        }, 6000);
+    })
 });
+

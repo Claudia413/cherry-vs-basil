@@ -43,6 +43,9 @@
             <li>
                 <button id="hat" class="buttoncontrol">How about a hat?</button>
             </li>
+            <li>
+                <button id="fly" class="buttoncontrol">Can you fly?</button>
+            </li>
 
         </ul>
         <ul id="look">
@@ -56,27 +59,40 @@
             <li class="lookcontrol">
                 <input id="pirate" class="lookcontrol" type="radio" name="look" value="pirate"> Pirate frog <br>
             </li>
+            <li class="lookcontrol">
+                <input id="silly" class="lookcontrol" type="radio" name="look" value="silly"> Silly frog <br>
+            </li>
         </ul>
     </div>
 
+    <!--Frog build below-->
+
     <div class="frog">
+        <div class="wingspan wingspan-right">
+            <div class="feather" data-id="0"></div>
+        </div>
+        <div class="wingspan-left flipY">
+            <div class="featherleft flipY" data-id="0"></div>
+        </div>
         <div class="tophattop">
             <div class="tophatbottom"></div>
         </div>
         <div id="head" class="frogface">
             <div class="sunglasses"></div>
             <div class="eye one">
-                <div class="pupil one">
+                <div id= pupilOne class="pupil one ">
                     <div id="tearOne" class="tear"></div>
                 </div>
             </div>
             <div class="eye two">
-                <div class="pupil two">
+                <div id= pupilTwo class="pupil two">
                     <div id="tearTwo" class="tear"></div>
                 </div>
             </div>
             <div class="frogmouth">
-                <div id="mouth" class="froglip"></div>
+                <div id="mouth" class="froglip">
+                    <div id="tongue" class=""></div>
+                </div>
             </div>
         </div>
 
@@ -115,11 +131,14 @@
 
 </div>
 
+<!--Frog texts below-->
+
 <div id=notext class="textbubble"><p>No!</p></div>
 <div id="welcome" class="textbubble"><p>Hi! My name is Bob.</p></div>
 <div id="opinionNormal" class="textbubble"><p>I'm quite happy, thank you.</p></div>
 <div id="opinionCool" class="textbubble"><p>I feel good, tenenunu. I feeeel good.</p></div>
 <div id="opinionPirate" class="textbubble"><p>Arrgg!</p></div>
+<div id="opinionSilly" class="textbubble"><p>Ladieda!</p></div>
 
 <script type="text/javascript" src="frogmove.js"></script>
 </body>
