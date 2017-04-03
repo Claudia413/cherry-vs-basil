@@ -6,8 +6,8 @@
 /*color-spots2: #27634d;*/
 
 /** {*/
-    /*padding: 0;*/
-    /*margin: 0;*/
+    /*!*padding: 0;*!*/
+    /*!*margin: 0;*!*/
     /*border: 1px solid;*/
 /*}*/
 
@@ -15,8 +15,10 @@
 .frog {
     position: absolute;
     height: 500px;
-    width: 400px;
-    margin: 150px;
+    width: 800px;
+    margin-left: 550px;
+    margin-top: 100px;
+    padding: 10px;
 
 }
 
@@ -392,13 +394,18 @@
 /* MAIN CONTENT CSS BELOW */
 
 .maincontent {
-    position: absolute;
+    position: relative;
     /*width: 750px;*/
 }
 
 #controls {
     position: absolute;
-    left: 480px;
+    top: 550px;
+    left: 10px;
+}
+
+li {
+    display: inline;
 }
 
 button {
@@ -408,7 +415,13 @@ button {
     font-weight: 600;
     padding: 5px;
     width: 160px;
+    height: auto;
     border-radius: 15px;
+}
+
+.buttons {
+    /*float: left;*/
+    display: inline-block;
 }
 
 .lookcontrol {
@@ -421,7 +434,8 @@ button {
     position: relative;
     width: 120px;
     height: 80px;
-    left: 350px;
+    left: 900px;
+    top: 100px;
     background: #494949;
     border-radius: 10px;
 }
