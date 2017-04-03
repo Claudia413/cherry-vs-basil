@@ -154,6 +154,11 @@ $(function () {
         $('#tongue').removeClass('frogtongue');                      // removes silly frog look
         $('#pupilOne').removeClass('silly silly.one');               // removes silly frog look
         $('#pupilTwo').removeClass('silly silly.two');               // removes silly frog look
+        $('.halo').hide(0);                                          // removes angelic frog look
+        $('.wingspan').hide();
+        $('.rightwingfly').css('animation-iteration-count', '1');    // removes infinite fly angel look right wing
+        $('.wingspan-left').hide();
+        $('.leftwingfly').css('animation-iteration-count', '1');     // removes infinite fly angel look left wing
     }
 
     // cool frog look
@@ -189,6 +194,24 @@ $(function () {
         $('#pupilOne').addClass('silly silly.one');
         $('#pupilTwo').addClass('silly silly.two');
         $('#mouth').removeClass('froglipSmirk');
+    });
+
+    //Angel frog look
+    $('#angel').click(function () {
+        reset();
+        $('.halo').show(0);
+        for (var i = 0; i < 9; i++) {
+            cloneFeather((120 * ((i + 1.5) * 0.45)), (15 * (i + 2.5) * 0.2), (i * 22), ('rotate(' + (70 - (i * 2.8)) + 'deg)'), (i + 1));
+        }
+        $('.wingspan').addClass('rightwingfly');
+        $('.rightwingfly').css('animation-iteration-count', 'infinite');
+
+        for (var j = 9; j >= 0; j--) {
+            cloneFeatherLeft((120 * ((j + 1.5) * 0.45)), (15 * (j + 2.5) * 0.2), (j * 22), ('rotate(' + (70 - (j * 2.8)) + 'deg)'), (j + 1));
+        }
+        $('.wingspan-left').addClass('leftwingfly');
+        $('.leftwingfly').css('animation-iteration-count', 'infinite');
+
     });
 
 //Wing stuff try-out
@@ -236,7 +259,7 @@ $(function () {
     //     cloneFeather((120 * ((i+1.5) * 0.45)), (15 * (i + 2.5) * 0.2), (i * 22), ('rotate(' + (70 - (i * 2.8)) + 'deg)'), (i + 1));
     //}
 
-    $('#fly').click(function () {
+    function flyfrogfly() {
         for (var i = 0; i < 9; i++) {
             cloneFeather((120 * ((i + 1.5) * 0.45)), (15 * (i + 2.5) * 0.2), (i * 22), ('rotate(' + (70 - (i * 2.8)) + 'deg)'), (i + 1));
         }
@@ -254,6 +277,12 @@ $(function () {
         setTimeout(function () {
             $('.wingspan-left').hide()
         }, 6000);
-    })
+    }
+
+
+    $('#fly').click(function () {
+        flyfrogfly();
+    });
+
 });
 
