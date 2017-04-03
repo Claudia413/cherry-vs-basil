@@ -155,6 +155,10 @@ $(function () {
         $('#pupilOne').removeClass('silly silly.one');               // removes silly frog look
         $('#pupilTwo').removeClass('silly silly.two');               // removes silly frog look
         $('.halo').hide(0);                                          // removes angelic frog look
+        $('.wingspan').hide();
+        $('.rightwingfly').css('animation-iteration-count', '1');    // removes infinite fly angel look right wing
+        $('.wingspan-left').hide();
+        $('.leftwingfly').css('animation-iteration-count', '1');     // removes infinite fly angel look left wing
     }
 
     // cool frog look
